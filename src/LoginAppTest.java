@@ -7,6 +7,7 @@ public class LoginAppTest {
 
     @Test
     public void testValidEmailAndPassword() {
+        System.setProperty("java.awt.headless", "true");
         String email = "johndoe@example.com";
         String password = "password123";
         String result = loginApp.authenticateUser(email, password);
@@ -17,6 +18,7 @@ public class LoginAppTest {
 
     @Test
     public void testInvalidEmailFormat() {
+        System.setProperty("java.awt.headless", "true");
         String email = "invalidemail";
         String password = "password123";
         String result = loginApp.authenticateUser(email, password);
@@ -26,6 +28,7 @@ public class LoginAppTest {
 
     @Test
     public void testEmptyEmailOrPassword() {
+        System.setProperty("java.awt.headless", "true");
         String result1 = loginApp.authenticateUser("", "password123");
         String result2 = loginApp.authenticateUser("johndoe@example.com", "");
 
@@ -35,6 +38,7 @@ public class LoginAppTest {
 
     @Test
     public void testIncorrectPassword() {
+        System.setProperty("java.awt.headless", "true");
         String email = "johndoe@example.com";
         String password = "wrongpassword";
         String result = loginApp.authenticateUser(email, password);
@@ -44,6 +48,7 @@ public class LoginAppTest {
 
     @Test
     public void testNonExistentEmail() {
+        System.setProperty("java.awt.headless", "true");
         String email = "nonexistent@example.com";
         String password = "password123";
         String result = loginApp.authenticateUser(email, password);
