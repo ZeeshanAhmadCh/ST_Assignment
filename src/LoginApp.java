@@ -11,6 +11,7 @@ public class LoginApp extends JFrame {
     private JTextField emailField;
     private JPasswordField passwordField;
     private static final String DB_URL = "jdbc:mysql://localhost:3306/softwaretesting";
+    
     private static final String DB_USER = "root";
     
     private static final String DB_PASSWORD = "";
