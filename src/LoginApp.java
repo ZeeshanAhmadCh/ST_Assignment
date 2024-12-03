@@ -21,7 +21,7 @@ public class LoginApp extends JFrame {
         setSize(350, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        System.setProperty("java.awt.headless", "true");
+        
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 2, 10, 10));
@@ -79,6 +79,7 @@ public class LoginApp extends JFrame {
     }
 
     public static void main(String[] args) {
+        System.setProperty("java.awt.headless", "true");
         SwingUtilities.invokeLater(() -> {
             LoginApp loginApp = new LoginApp();
             loginApp.setVisible(true);
