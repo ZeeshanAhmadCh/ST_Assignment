@@ -22,12 +22,15 @@ jobs:
         with:
           distribution: 'temurin' 
           java-version: '17'
+      
       - name: Download JUnit
         run: |
           curl -o junit-platform-console-standalone-1.8.2.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.2/junit-platform-console-standalone-1.8.2.jar
-    
-      - name: Build and Run Tests
+
+      - name: Compile Code
         run: |
-          mkdir -p build
-          javac -d build src/LoginApp.java src/LoginAppTest.java
-          java -cp build org.junit.platform.console.ConsoleLauncher --scan-classpath
+          javac -cp .:junit-platform-console-standalone-1.8.2.jar -d build src/LoginApp.java src/LoginAppTest.java
+
+      - name: Run Tests
+        run: |
+          java -jar junit-platform-console-standalone-1.8.2.jar --class-path build --scan-classpath
