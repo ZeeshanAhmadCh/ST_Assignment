@@ -80,6 +80,10 @@ public class LoginApp extends JFrame {
 
     public static void main(String[] args) {
         System.setProperty("java.awt.headless", "true");
+         if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("Running in headless mode.");
+            return; 
+        }
         SwingUtilities.invokeLater(() -> {
             LoginApp loginApp = new LoginApp();
             loginApp.setVisible(true);
