@@ -17,6 +17,10 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17' 
+      - name: Download JUnit
+        run: |
+          curl -o junit-platform-console-standalone-1.8.2.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.2/junit-platform-console-standalone-1.8.2.jar
+    
       - name: Build and Run Tests
         run: |
           mkdir -p build
